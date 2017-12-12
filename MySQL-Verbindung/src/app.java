@@ -5,9 +5,14 @@ public class app {
 		
 		System.out.println("Willkommen bei der MySQL Trianingsapp :)");
 		
-		eingabe.eingabeDaten();
+		zugangsdaten zd = new zugangsdaten();
+		ctm connection = new ctm();
+		
+		eingabe.eingabeDaten(zd);
+		connection.ConnectToMysql(zd.getServer(), zd.getPort(), zd.getDatabase(), zd.getUser(), zd.getPass());
 		
 		
+			
 	}
 
 }
